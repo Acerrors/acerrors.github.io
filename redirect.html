@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect</title>
+    <script>
+        // JavaScript, um die ASIN aus der URL zu holen und den Amazon-Link zu generieren
+        window.onload = function() {
+            // URL-Parameter holen
+            const urlParams = new URLSearchParams(window.location.search);
+            const product = urlParams.get('product');
+
+            if (product) {
+                // Amazon-Link generieren
+                const amazonLink = `https://www.amazon.de/dp/${product}`;
+
+                // Button-Link setzen
+                document.getElementById('amazonLink').href = amazonLink;
+
+                // Automatische Weiterleitung nach 5 Sekunden
+                setTimeout(function() {
+                    window.location.href = amazonLink;
+                }, 5000);
+            } else {
+                // Wenn keine ASIN vorhanden ist, zeige eine Fehlermeldung
+                document.getElementById('message').innerText = "Keine Produkt-ID gefunden.";
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>Weiterleitung zu Amazon</h1>
+    <p id="message">Klicke auf den unten stehenden Button, um zu Amazon weitergeleitet zu werden.</p>
+    <a id="amazonLink" href="#" style="font-size: 20px; padding: 10px; background-color: #ff9900; color: white; text-decoration: none;">Klicke hier, um zu Amazon zu gehen</a>
+</body>
+</html>
