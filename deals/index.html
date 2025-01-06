@@ -3,76 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deals - Acerrors</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>AC Errors - Deals</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
             background-color: #f9f9f9;
             color: #333;
-            margin: 0;
-            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
         }
         .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #555;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
         .deal {
-            border-bottom: 1px solid #ddd;
-            padding: 10px 0;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s ease;
         }
-        .deal:last-child {
-            border-bottom: none;
+        .deal:hover {
+            transform: scale(1.02);
         }
-        .price {
-            color: #2ecc71;
-            font-weight: bold;
+        .deal img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 1rem;
         }
-        .old-price {
-            text-decoration: line-through;
-            color: #e74c3c;
-            margin-left: 10px;
+        .deal-info {
+            flex: 1;
         }
-        .asin {
-            font-size: 0.9em;
-            color: #888;
+        .deal-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0 0 0.5rem;
+        }
+        .deal-price {
+            font-size: 1rem;
+            color: #4CAF50;
+            font-weight: 700;
+        }
+        .deal-description {
+            font-size: 0.9rem;
+            color: #666;
         }
     </style>
 </head>
 <body>
+    <header>AC Errors - Price Error Deals</header>
     <div class="container">
-        <h1>Deals</h1>
-        <div id="deals-list">
-            <!-- Deals will be inserted here -->
+        <!-- Placeholder for deals -->
+        <div class="deal">
+            <img src="https://via.placeholder.com/150" alt="Product Image">
+            <div class="deal-info">
+                <div class="deal-title">Sample Deal Title</div>
+                <div class="deal-price">$19.99</div>
+                <div class="deal-description">This is a placeholder description for a price error deal.</div>
+            </div>
+        </div>
+
+        <div class="deal">
+            <img src="https://via.placeholder.com/150" alt="Product Image">
+            <div class="deal-info">
+                <div class="deal-title">Another Deal Example</div>
+                <div class="deal-price">$49.99</div>
+                <div class="deal-description">Another placeholder for a second deal, showing the modern UI.</div>
+            </div>
         </div>
     </div>
 </body>
-<script>
-    async function loadDeals() {
-        const response = await fetch("deals.json");
-        const deals = await response.json();
-        const dealsList = document.getElementById("deals-list");
-        dealsList.innerHTML = "";
-        deals.forEach(deal => {
-            const dealDiv = document.createElement("div");
-            dealDiv.className = "deal";
-            dealDiv.innerHTML = `
-                <h2>${deal.title}</h2>
-                <p>ASIN: <span class="asin">${deal.asin}</span></p>
-                <p>New Price: <span class="price">${deal.new_price}€</span> <span class="old-price">${deal.old_price}€</span></p>
-                <a href="https://www.amazon.com/dp/${deal.asin}" target="_blank">View on Amazon</a>
-            `;
-            dealsList.appendChild(dealDiv);
-        });
-    }
-    loadDeals();
-</script>
 </html>
