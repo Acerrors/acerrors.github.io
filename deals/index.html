@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deals - Acerrors</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #555;
+        }
+        .deal {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .deal:last-child {
+            border-bottom: none;
+        }
+        .price {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: #e74c3c;
+            margin-left: 10px;
+        }
+        .asin {
+            font-size: 0.9em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Deals</h1>
+        <div id="deals-list">
+            <!-- Deals will be inserted here -->
+        </div>
+    </div>
+</body>
+<script>
+    async function loadDeals() {
+        const response = await fetch("deals.json");
+        const deals = await response.json();
+        const dealsList = document.getElementById("deals-list");
+        dealsList.innerHTML = "";
+        deals.forEach(deal => {
+            const dealDiv = document.createElement("div");
+            dealDiv.className = "deal";
+            dealDiv.innerHTML = `
+                <h2>${deal.title}</h2>
+                <p>ASIN: <span class="asin">${deal.asin}</span></p>
+                <p>New Price: <span class="price">${deal.new_price}€</span> <span class="old-price">${deal.old_price}€</span></p>
+                <a href="https://www.amazon.com/dp/${deal.asin}" target="_blank">View on Amazon</a>
+            `;
+            dealsList.appendChild(dealDiv);
+        });
+    }
+    loadDeals();
+</script>
+</html>
