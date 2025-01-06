@@ -9,58 +9,60 @@
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
-            background-color: #f9f9f9;
-            color: #333;
+            background: linear-gradient(to bottom, #000428, #004e92);
+            color: #f0f0f0;
+            overflow-x: hidden;
         }
         header {
-            background-color: #4CAF50;
+            background-color: #1c3b57;
             color: white;
             padding: 1rem;
             text-align: center;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
         }
         .container {
             max-width: 1200px;
             margin: 2rem auto;
             padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
         .deal {
-            background: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border-radius: 8px;
             padding: 1rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            transition: transform 0.2s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         .deal:hover {
-            transform: scale(1.02);
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
         .deal img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
+            width: 100%;
+            height: auto;
             border-radius: 8px;
-            margin-right: 1rem;
+            margin-bottom: 1rem;
         }
         .deal-info {
-            flex: 1;
+            text-align: center;
         }
         .deal-title {
             font-size: 1.2rem;
             font-weight: 700;
-            margin: 0 0 0.5rem;
+            margin-bottom: 0.5rem;
         }
         .deal-price {
             font-size: 1rem;
             color: #4CAF50;
             font-weight: 700;
+            margin-bottom: 0.5rem;
         }
         .deal-description {
             font-size: 0.9rem;
-            color: #666;
+            color: #cccccc;
         }
     </style>
 </head>
@@ -69,7 +71,7 @@
     <div class="container">
         <!-- Placeholder for deals -->
         <div class="deal">
-            <img src="https://via.placeholder.com/150" alt="Product Image">
+            <img src="https://via.placeholder.com/300" alt="Product Image">
             <div class="deal-info">
                 <div class="deal-title">Sample Deal Title</div>
                 <div class="deal-price">$19.99</div>
@@ -78,11 +80,29 @@
         </div>
 
         <div class="deal">
-            <img src="https://via.placeholder.com/150" alt="Product Image">
+            <img src="https://via.placeholder.com/300" alt="Product Image">
             <div class="deal-info">
                 <div class="deal-title">Another Deal Example</div>
                 <div class="deal-price">$49.99</div>
                 <div class="deal-description">Another placeholder for a second deal, showing the modern UI.</div>
+            </div>
+        </div>
+
+        <div class="deal">
+            <img src="https://via.placeholder.com/300" alt="Product Image">
+            <div class="deal-info">
+                <div class="deal-title">Third Deal Placeholder</div>
+                <div class="deal-price">$99.99</div>
+                <div class="deal-description">Yet another placeholder for a deal with a sleek modern design.</div>
+            </div>
+        </div>
+
+        <div class="deal">
+            <img src="https://via.placeholder.com/300" alt="Product Image">
+            <div class="deal-info">
+                <div class="deal-title">Fourth Deal Placeholder</div>
+                <div class="deal-price">$29.99</div>
+                <div class="deal-description">Showcasing the grid layout and stylish design for the deals page.</div>
             </div>
         </div>
     </div>
