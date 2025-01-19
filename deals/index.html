@@ -3,108 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AC Errors - Deals</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>acerrors Deals</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/space-grotesk/2.0.0/space-grotesk.css" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
             margin: 0;
-            background: linear-gradient(to bottom, #000428, #004e92);
-            color: #f0f0f0;
-            overflow-x: hidden;
+            padding: 0;
+            font-family: 'Space Grotesk', sans-serif;
+            background: white;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
-        header {
-            background-color: #1c3b57;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            font-size: 1.8rem;
+
+        .navbar {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
             font-weight: 700;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-        .deal {
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            padding: 1rem;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .deal:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        }
-        .deal img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-        .deal-info {
-            text-align: center;
-        }
-        .deal-title {
             font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
+            color: #333;
+            text-decoration: none;
         }
-        .deal-price {
-            font-size: 1rem;
-            color: #4CAF50;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
+
+        .login-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            color: #999;
+            text-decoration: none;
+            cursor: not-allowed;
         }
-        .deal-description {
+
+        .login-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            flex-grow: 1;
+        }
+
+        .hero {
+            text-align: center;
+            margin: 100px 0;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .no-deals {
+            text-align: center;
+            color: #999;
+            font-size: 1.1rem;
+            margin-top: 80px;
+        }
+
+        footer {
+            background: #faf9f7;
+            padding: 20px 40px;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             font-size: 0.9rem;
-            color: #cccccc;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #333;
+        }
+
+        .x-logo {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    <header>AC Errors - Price Error Deals</header>
+    <nav class="navbar">
+        <a href="/" class="logo">acerrors</a>
+        <a href="#" class="login-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            Login
+        </a>
+    </nav>
+
     <div class="container">
-        <!-- Placeholder for deals -->
-        <div class="deal">
-            <img src="https://via.placeholder.com/300" alt="Product Image">
-            <div class="deal-info">
-                <div class="deal-title">Sample Deal Title</div>
-                <div class="deal-price">$19.99</div>
-                <div class="deal-description">This is a placeholder description for a price error deal.</div>
-            </div>
+        <div class="hero">
+            <h1>AMAZON WITH acerrors' DEALS</h1>
+            <p>Snap up deals and prices glitches at record speed, without the heavy price tag. Rapid but silent.</p>
         </div>
-
-        <div class="deal">
-            <img src="https://via.placeholder.com/300" alt="Product Image">
-            <div class="deal-info">
-                <div class="deal-title">Another Deal Example</div>
-                <div class="deal-price">$49.99</div>
-                <div class="deal-description">Another placeholder for a second deal, showing the modern UI.</div>
-            </div>
-        </div>
-
-        <div class="deal">
-            <img src="https://via.placeholder.com/300" alt="Product Image">
-            <div class="deal-info">
-                <div class="deal-title">Third Deal Placeholder</div>
-                <div class="deal-price">$99.99</div>
-                <div class="deal-description">Yet another placeholder for a deal with a sleek modern design.</div>
-            </div>
-        </div>
-
-        <div class="deal">
-            <img src="https://via.placeholder.com/300" alt="Product Image">
-            <div class="deal-info">
-                <div class="deal-title">Fourth Deal Placeholder</div>
-                <div class="deal-price">$29.99</div>
-                <div class="deal-description">Showcasing the grid layout and stylish design for the deals page.</div>
-            </div>
+        <div class="no-deals">
+            <p>No deals yet. Updates soon</p>
         </div>
     </div>
+
+    <footer>
+        <div class="footer-content">
+            <div>&copy; 2025 acerrors. All rights reserved.</div>
+            <div class="footer-links">
+                <a href="/contact">Contact</a>
+                <a href="/privacy">Privacy</a>
+                <a href="https://x.com/acerrors">
+                    <svg class="x-logo" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
